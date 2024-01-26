@@ -1,0 +1,11 @@
+# Roblox builds and artifacts
+*.rbxl
+*.rbxlx
+*.rbxm
+*.rbxmx
+*.rbxl.lock
+*.rbxlx.lock
+
+# Wally
+/Packages
+/DevPackages

@@ -1,0 +1,21 @@
+{
+  "name": "react-roblox-workshop",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Packages": {
+        "$path": "Packages"
+      },
+      "DevPackages": {
+        "$path": "DevPackages"
+      },
+      "lessons": {
+        "$path": "lessons"
+      },
+      "tests": {
+        "$path": "tests"
+      }
+    }
+  }
+}

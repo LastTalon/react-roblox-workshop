@@ -1,0 +1,23 @@
+gitSourceBranch = "main"
+
+[docusaurus]
+title = "React Roblox Workshop"
+tagline = "A set of workshops for learning React"
+
+[home]
+enabled = true
+
+[[home.features]]
+title = "Master React in Roblox"
+description = "Dive into the world of React with a Roblox twist. Our workshops offer tailored lessons and hands-on examples, making it easier to integrate React's powerful features into your Roblox projects."
+
+[[home.features]]
+title = "Streamline your development"
+description = "Embrace efficient learning with structured, interactive tutorials designed to speed up your React development within the Roblox platform. From basic concepts to advanced techniques, we've got you covered."
+
+[[home.features]]
+title = "Interactive Learning Experience"
+description = "Engage with React like never before in a Roblox-centric context. Our workshops combineMatter Hooks is rigorously tested and maintained to ensure reliable performance and compatibility with the latest versions of Matter. theory with practical exercises, ensuring a deep understanding and immediate application of React's capabilities in your game development."
+
+[footer]
+copyright = "Copyright © 2024 Lucas Gangstad. Built with Moonwave and Docusaurus"

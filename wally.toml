@@ -1,0 +1,19 @@
+[package]
+name = "lasttalon/react-roblox-workshop"
+description = "A set of workshops for learning React"
+version = "0.1.0"
+license = "MPL-2.0"
+authors = ["Lucas Gangstad <lucas@lasttalon.dev>"]
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+private = true
+
+[place]
+shared-packages = "game.ReplicatedStorage.Packages"
+
+[dependencies]
+React = "jsdotlua/react@17.0.2"
+ReactRoblox = "jsdotlua/react-roblox@17.0.2"
+
+[dev-dependencies]
+TestEZ = "roblox/testez@0.4.1"
