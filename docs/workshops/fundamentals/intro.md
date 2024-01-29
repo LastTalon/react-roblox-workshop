@@ -34,6 +34,7 @@ leave them as optional homework.
    - **Topics**:
      - Functional vs. Class components.
      - Composing components.
+     - Introduction to props.
      - Introduction to hooks (useState, useEffect).
    - **Exercises**:
      - Building a simple component, a button.
