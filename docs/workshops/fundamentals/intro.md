@@ -2,9 +2,21 @@
 sidebar_position: 1
 ---
 
-# Fundamentals
+# Introduction
+
+This workshop is designed to teach the fundamentals of React and how they apply
+to Roblox development. It is intended for those who are new to React and want to
+learn how to use it in Roblox.
 
 ## Outline
+
+The workshop is designed to be 2 hours long and is divided into 8 sections. Each
+section has a specific objective and topics to cover.
+
+The exercises and challenges are optional, but they are designed to reinforce
+the concepts covered in the workshop. An instructor can choose to include them
+as part of the workshop, either collaboratively, as live coding exercises, or
+leave them as optional homework.
 
 1. **Introduction to React** (10 mins)
    - **Objective**: Understand the basics of React and its significance.
