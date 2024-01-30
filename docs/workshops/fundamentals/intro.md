@@ -37,7 +37,7 @@ leave them as optional homework.
      - Introduction to props.
      - Introduction to hooks (useState, useEffect).
    - **Exercises**:
-     - Building a simple component, a button.
+     - Create a basic button component with React.
 4. **State Management and Lifecycle** (20 mins)
    - **Objective**: Understand how to manage state and lifecycle in React.
    - **Topics**:
@@ -52,7 +52,7 @@ leave them as optional homework.
      - Component hierarchy and data flow.
      - Lifting state up.
    - **Exercises**:
-     - Creating a parent component that manages data for child components.
+     - Creating a list component that displays a list of strings.
 6. **Advanced Concepts Overview** (10 mins)
    - **Objective**: Touch upon more advanced React concepts.
    - **Topics**:
