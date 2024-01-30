@@ -2,5 +2,6 @@ std = "roblox+testez"
 
 [rules]
 shadowing = "allow"
+unused_variable = "allow"
 
 [config]

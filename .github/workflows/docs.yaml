@@ -23,7 +23,7 @@ jobs:
         run: npm install -g moonwave
 
       - name: Generate Docs
-        run: moonwave build
+        run: moonwave build --code lessons
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
