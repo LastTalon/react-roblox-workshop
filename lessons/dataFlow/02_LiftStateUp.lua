@@ -15,18 +15,23 @@ local function UserProfile(props: UserProfileProps): React.ReactNode
 	return e("Frame", {
 		Size = UDim2.fromScale(0.5, 1),
 		Position = UDim2.fromScale(0, 0),
+		BackgroundColor3 = Color3.fromRGB(255, 255, 255),
 	}, {
 		UserName = e("TextLabel", {
 			Text = "Username: " .. props.username,
 
 			Size = UDim2.fromScale(1, 0.5),
 			Position = UDim2.fromScale(0, 0),
+
+			BackgroundTransparency = 1,
 		}),
 		UserEmail = e("TextLabel", {
 			Text = "Email: " .. props.email,
 
 			Size = UDim2.fromScale(1, 0.5),
 			Position = UDim2.fromScale(0, 0.5),
+
+			BackgroundTransparency = 1,
 		}),
 	})
 end
@@ -69,20 +74,28 @@ local function EditableField(props: EditableFieldProps): React.ReactNode
 	return e("Frame", {
 		Size = UDim2.fromScale(0.5, 0.7),
 		Position = UDim2.fromScale(0.5, 0),
+		BackgroundColor3 = Color3.fromRGB(255, 255, 255),
 	}, {
 		InputField = e("TextBox", {
 			Text = props.value,
-			[React.Change.Text] = props.onChange, -- Function to handle text change
 
-			Size = UDim2.fromScale(1, 0.5),
-			Position = UDim2.fromScale(0, 0),
+			[React.Change.Text] = function(instance: TextBox)
+				props.onChange(instance.Text) -- Function to handle text change
+			end,
+
+			Size = UDim2.fromScale(0.7, 0.25),
+			Position = UDim2.fromScale(0.5, 0.25),
+			AnchorPoint = Vector2.new(0.5, 0.5),
+
+			BackgroundColor3 = Color3.fromRGB(255, 255, 255),
 		}),
 		SaveButton = e("TextButton", {
 			Text = "Save",
 			[React.Event.Activated] = props.onSave, -- Function to handle save
 
-			Size = UDim2.fromScale(1, 0.5),
-			Position = UDim2.fromScale(0, 0.5),
+			Size = UDim2.fromScale(0.7, 0.25),
+			Position = UDim2.fromScale(0.5, 0.75),
+			AnchorPoint = Vector2.new(0.5, 0.5),
 		}),
 	})
 end
@@ -116,7 +129,11 @@ local function EditableUserProfileContainer(): React.ReactNode
 	-- callbacks to update the state, and save the username to the server.
 	local username, setUsername = useState("ReactRobloxUser")
 
-	return e("Frame", {}, {
+	return e("Frame", {
+		Size = UDim2.fromScale(1, 1),
+		Position = UDim2.fromScale(0, 0),
+		BackgroundColor3 = Color3.fromRGB(255, 255, 255),
+	}, {
 		UserProfile = e(UserProfile, {
 			-- Here we can pass our state back down to the child component
 			username = username,

@@ -100,8 +100,8 @@ local function ReducerDisplay(): React.ReactNode
 	end, {})
 
 	useEffect(function()
-		print("MessageDisplay's message changed to: ", message)
-	end, { message })
+		print("MessageDisplay's message changed to: ", message.message)
+	end, { message.message })
 
 	return e("Frame", {
 		-- Let's make our message display easy to see
@@ -110,13 +110,15 @@ local function ReducerDisplay(): React.ReactNode
 		AnchorPoint = Vector2.new(0.5, 0.5),
 	}, {
 		TextInput = React.createElement("TextBox", {
+			Text = message.message,
 			PlaceholderText = "Enter a message",
 
 			-- Position this one above the center of the frame
 			Size = UDim2.fromScale(1, 0.5),
 			Position = UDim2.fromScale(0, 0),
+			BackgroundColor3 = Color3.fromRGB(255, 255, 255),
 
-			[React.Change.Text] = function(newText: string)
+			[React.Change.Text] = function(instance: TextBox)
 				-- Here we need to instead dispatch an action to our reducer. For more
 				-- complex state we can use special functions called "action creators"
 				-- to create our actions (consolidating that behavior, just like
@@ -128,7 +130,7 @@ local function ReducerDisplay(): React.ReactNode
 					type = "set",
 
 					-- We'll pass the new text as the `message` field.
-					message = newText,
+					message = instance.Text,
 				})
 			end,
 		}),
@@ -143,6 +145,7 @@ local function ReducerDisplay(): React.ReactNode
 			-- Position this one below the center of the frame
 			Size = UDim2.fromScale(1, 0.5),
 			Position = UDim2.fromScale(0, 0.5),
+			BackgroundColor3 = Color3.fromRGB(213, 213, 213),
 		}),
 	})
 end

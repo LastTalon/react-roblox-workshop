@@ -25,7 +25,7 @@ local function Composition(): React.ReactNode
 		-- We add some basic styling to distinguish this component from the composed
 		-- component.
 		Size = UDim2.new(1, 0, 1, 0),
-		BackgroundColor3 = Color3.fromRGB(0, 0, 255),
+		BackgroundColor3 = Color3.fromRGB(94, 72, 136),
 	}, {
 		-- When we pass children we assign it to the key name we want to use for
 		-- this child element. In this case we are using the key name

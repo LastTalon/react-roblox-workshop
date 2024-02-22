@@ -40,17 +40,19 @@ local function MessageDisplay(): React.ReactNode
 		AnchorPoint = Vector2.new(0.5, 0.5),
 	}, {
 		TextInput = React.createElement("TextBox", {
+			Text = message,
 			PlaceholderText = "Enter a message",
 
 			-- Position this one above the center of the frame
 			Size = UDim2.fromScale(1, 0.5),
 			Position = UDim2.fromScale(0, 0),
+			BackgroundColor3 = Color3.fromRGB(255, 255, 255),
 
 			-- If we want to listen to a change event, we get another special prop to
 			-- pass in: [React.Change.<EventName>]
-			[React.Change.Text] = function(newText: string)
+			[React.Change.Text] = function(instance: TextBox)
 				-- All we need to do is call the setter function to update the state
-				setMessage(newText)
+				setMessage(instance.Text)
 			end,
 		}),
 		DisplayLabel = React.createElement("TextLabel", {
@@ -60,6 +62,7 @@ local function MessageDisplay(): React.ReactNode
 			-- Position this one below the center of the frame
 			Size = UDim2.fromScale(1, 0.5),
 			Position = UDim2.fromScale(0, 0.5),
+			BackgroundColor3 = Color3.fromRGB(213, 213, 213),
 		}),
 	})
 end
