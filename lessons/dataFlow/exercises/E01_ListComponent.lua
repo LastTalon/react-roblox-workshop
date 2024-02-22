@@ -70,6 +70,7 @@ type ItemProps = {
 ]=]
 local function Item(props: ItemProps): React.ReactNode
 	-- Here is where you'll write your Item rendering code.
+	return
 end
 
 --[=[
@@ -108,7 +109,12 @@ local function ListComponent(props: ListProps): React.ReactNode
 	-- Then we return a Frame with the list of Item components as children.
 	return e("Frame", {
 		-- Hopefully we don't try to render too many items and overflow the frame.
-		Size = UDim2.fromOffset(200, 400),
+		Size = UDim2.new(0, 200, 1, 0),
+		Position = UDim2.fromScale(0.5, 0.5),
+		AnchorPoint = Vector2.new(0.5, 0.5),
+
+		BackgroundColor3 = Color3.fromRGB(255, 255, 255),
+
 		-- We simply pass the list of Item components as the children.
 	}, items)
 end

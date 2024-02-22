@@ -27,6 +27,8 @@ local function Item(props: ItemProps): React.ReactNode
 		-- additional challenge you could try to use a UIListLayout instead of
 		-- manually positioning each item.
 		Position = UDim2.fromOffset(0, props.position * 24),
+
+		BackgroundColor3 = Color3.fromRGB(255, 255, 255),
 	})
 end
 
@@ -51,7 +53,12 @@ local function ListComponent(props: ListProps): React.ReactNode
 	-- Then we return a Frame with the list of Item components as children.
 	return e("Frame", {
 		-- Hopefully we don't try to render too many items and overflow the frame.
-		Size = UDim2.fromOffset(200, 400),
+		Size = UDim2.new(0, 200, 1, 0),
+		Position = UDim2.fromScale(0.5, 0.5),
+		AnchorPoint = Vector2.new(0.5, 0.5),
+
+		BackgroundColor3 = Color3.fromRGB(255, 255, 255),
+
 		-- We simply pass the list of Item components as the children.
 	}, items)
 end

@@ -72,14 +72,16 @@ local function EffectDisplay(): React.ReactNode
 		AnchorPoint = Vector2.new(0.5, 0.5),
 	}, {
 		TextInput = React.createElement("TextBox", {
+			Text = message,
 			PlaceholderText = "Enter a message",
 
 			-- Position this one above the center of the frame
 			Size = UDim2.fromScale(1, 0.5),
 			Position = UDim2.fromScale(0, 0),
+			BackgroundColor3 = Color3.fromRGB(255, 255, 255),
 
-			[React.Change.Text] = function(newText: string)
-				setMessage(newText)
+			[React.Change.Text] = function(instance: TextBox)
+				setMessage(instance.Text)
 			end,
 		}),
 		DisplayLabel = React.createElement("TextLabel", {
@@ -88,6 +90,7 @@ local function EffectDisplay(): React.ReactNode
 			-- Position this one below the center of the frame
 			Size = UDim2.fromScale(1, 0.5),
 			Position = UDim2.fromScale(0, 0.5),
+			BackgroundColor3 = Color3.fromRGB(213, 213, 213),
 		}),
 	})
 end

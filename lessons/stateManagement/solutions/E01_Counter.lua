@@ -45,6 +45,7 @@ local function StateCounter(): React.ReactNode
 			-- Position this one above the center of the frame
 			Size = UDim2.fromScale(1, 0.5),
 			Position = UDim2.fromScale(0, 0),
+			BackgroundColor3 = Color3.fromRGB(213, 213, 213),
 		}),
 		IncrementButton = e(BasicButton, {
 			text = "Increment",
@@ -108,6 +109,7 @@ local function ReducerCounter(): React.ReactNode
 			-- Position this one above the center of the frame
 			Size = UDim2.fromScale(1, 0.5),
 			Position = UDim2.fromScale(0, 0),
+			BackgroundColor3 = Color3.fromRGB(213, 213, 213),
 		}),
 		IncrementButton = e(BasicButton, {
 			text = "Increment",
@@ -126,6 +128,6 @@ end
 
 -- We'll return both solutions rather than just one like with prior components.
 return {
-	StateCounter,
-	ReducerCounter,
+	StateCounter = StateCounter,
+	ReducerCounter = ReducerCounter,
 }

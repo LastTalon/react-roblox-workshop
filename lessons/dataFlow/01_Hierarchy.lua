@@ -38,6 +38,7 @@ local function UserProfile(props: UserProfileProps): React.ReactNode
 	return e("Frame", {
 		Size = UDim2.fromScale(0.5, 1),
 		Position = UDim2.fromScale(0, 0),
+		BackgroundColor3 = Color3.fromRGB(255, 255, 255),
 	}, {
 		-- We create two text labels to display the user's username and email. We
 		-- position and size them so they fit nicely in the frame.
@@ -46,12 +47,16 @@ local function UserProfile(props: UserProfileProps): React.ReactNode
 
 			Size = UDim2.fromScale(1, 0.5),
 			Position = UDim2.fromScale(0, 0),
+
+			BackgroundTransparency = 1,
 		}),
 		UserEmail = e("TextLabel", {
 			Text = "Email: " .. props.email,
 
 			Size = UDim2.fromScale(1, 0.5),
 			Position = UDim2.fromScale(0, 0.5),
+
+			BackgroundTransparency = 1,
 		}),
 	})
 end
@@ -84,7 +89,11 @@ local function UserProfileContainer(): React.ReactNode
 	-- to a child component. Right now this UserProfile component is only used in
 	-- this file, but we could easily move it to a separate file and import it if
 	-- we wanted to re-use it. This is a common composition pattern.
-	return e("Frame", {}, {
+	return e("Frame", {
+		Size = UDim2.fromScale(1, 1),
+		Position = UDim2.fromScale(0, 0),
+		BackgroundColor3 = Color3.fromRGB(255, 255, 255),
+	}, {
 		UserProfile = e(UserProfile, userData),
 		LogoutButton = e("TextButton", {
 			Text = "Logout",
